@@ -1,0 +1,84 @@
+@import url('colors.css');
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: url('./current_wallpaper.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.overlay {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* This creates a semi-black overlay */
+}
+.grid-container,
+.grid-container-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /*background-color: var(--background);*/
+    padding: 5px;
+}
+.grid-container-inner {
+    background-color: transparent;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-item,
+.grid-item-inner {
+    /*background-color: var(--background);*/
+    border: 0.2em solid var(--foreground);
+    padding: 0.3em;
+    margin: 0.3em;
+    border-radius: 1em;
+    text-align: center;
+}
+
+.grid-item-inner {
+    border: 0px solid var(--foreground);
+    background-color: var(--background);
+}
+
+
+.grid-item:hover {
+    border: 0.2em solid var(--color11);
+}
+
+.grid-item:hover .grid-item-inner {
+    background-color: var(--color13);
+}
+
+.grid-item:hover .workspaceNumber {
+    color: var(--color11);
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.workspaceNumber {
+    color: var(--foreground);
+    font-size:1.5em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+.classClient {
+    color: var(--foreground);
+    font-size:1.2em;
+}
+
+.titleClient {
+    color: var(--foreground);
+    font-size:1em;
+}
